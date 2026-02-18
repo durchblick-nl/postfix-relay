@@ -22,6 +22,6 @@ for i in $(seq 1 10); do
 done
 
 if [ "$ADDED" -gt 0 ]; then
-    postmap "$SASL_FILE"
-    echo "init-sender-maps: postmap updated with $ADDED sender(s)"
+    postmap lmdb:"$SASL_FILE"
+    echo "init-sender-maps: postmap (lmdb) updated with $ADDED sender(s)"
 fi
