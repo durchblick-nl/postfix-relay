@@ -15,7 +15,7 @@ for i in $(seq 1 10); do
     PASS="${!PASS_VAR}"
 
     if [ -n "$FROM" ] && [ -n "$USER" ] && [ -n "$PASS" ]; then
-        echo "$FROM [smtp.protonmail.ch]:587 $USER:$PASS" >> "$SASL_FILE"
+        echo "$FROM $USER:$PASS" >> "$SASL_FILE"
         echo "init-sender-maps: added sender-dependent credentials for $FROM"
         ADDED=$((ADDED + 1))
     fi
